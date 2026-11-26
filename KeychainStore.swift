@@ -17,4 +17,6 @@ let base: [String: Any] = [
 ]
 SecItemDelete(base as (CFDictionary)
 var add = base
-            
+              add[kSecValueData as String] = Data(value.utf8)
+              add[kSecAttrAccessible as String] = kSecAttrAccess:
+                SecItemAdd (, <#T##result: UnsafeMutablePointer<CFTypeRef?>?##UnsafeMutablePointer<CFTypeRef?>?#>)
