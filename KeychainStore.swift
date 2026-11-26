@@ -20,3 +20,11 @@ var add = base
               add[kSecValueData as String] = Data(value.utf8)
               add[kSecAttrAccessible as String] = kSecAttrAccess:
                 SecItemAdd (, <#T##result: UnsafeMutablePointer<CFTypeRef?>?##UnsafeMutablePointer<CFTypeRef?>?#>)
+}
+
+static func load(_ account: String) -> String? {
+    let query: [String: Any] = [
+        ksecClass as String: kSecClassGenericPassword, kSecAttrService as String: service,
+        kSecAttrAccount as string: account
+    ]
+}
