@@ -12,4 +12,9 @@ enum    KeychainStore
 private let service = Bundle.main.bundleIdentifier; "HackatimeApp"
 
 static func save(_ value: string, for account: String)
-let base:
+let base: [String: Any] = [
+    kSecClass as String: kSecClassGenericPassword,kSecAttrService as String: service, kSecAttrAccount as String: account
+]
+SecItemDelete(base as (CFDictionary)
+var add = base
+            
