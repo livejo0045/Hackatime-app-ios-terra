@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var vm = HackatimeViewModel 
+    @StateObject private var vm = HackatimeViewModel ()
+
+    var body: some View {
     }
 }

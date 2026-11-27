@@ -25,6 +25,13 @@ var add = base
 static func load(_ account: String) -> String? {
     let query: [String: Any] = [
         ksecClass as String: kSecClassGenericPassword, kSecAttrService as String: service,
-        kSecAttrAccount as string: account
+        kSecAttrAccount as string: account,
+        kSecReturnData as String: true,
+        KsecMatchLimit as String: kSecMatchLimitOne
     ]
+    var result: AnyObject? 
+    guard SecItemCopyMatching(query as Cfdictionary, &result) == eerSecSuccess,
+    let data = result as? Data else { return nil }
+    return String(data: data, encoding: .utf8)
 }
+
